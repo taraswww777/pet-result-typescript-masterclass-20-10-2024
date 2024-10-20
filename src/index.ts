@@ -1,12 +1,17 @@
+enum TypeCopyBook {
+  line = 'line',
+  square = 'square',
+}
+
 interface CopyBook {
-  type: 'line' | 'square',
+  type: TypeCopyBook | keyof typeof TypeCopyBook,
   format: 'A4',
   color: string,
   countPages: 12 | 24 | 32 | 48 | 96,
 }
 
 const copyBook1: CopyBook = {
-  type: 'line',
+  type: TypeCopyBook.line,
   format: 'A4',
   color: 'white',
   countPages: 12,
@@ -20,10 +25,17 @@ const copyBook2: CopyBook = {
 }
 
 const copyBook3: CopyBook = {
-  type: 'line',
+  type: 'square',
   format: 'A4',
   color: 'white',
   countPages: 32,
+}
+
+const copyBook4: CopyBook = {
+  type: 'square',
+  format: 'A4',
+  color: 'white',
+  countPages: 48,
 }
 
 function getPageSize(copyBook: CopyBook) {
@@ -42,3 +54,4 @@ console.log('copyBook2 getPageSize:', getPageSize(copyBook2));
 console.log('isBug copyBook1:', isBug(copyBook1))
 console.log('isBug copyBook2:', isBug(copyBook2))
 console.log('isBug copyBook3:', isBug(copyBook3))
+console.log('isBug copyBook4:', isBug(copyBook4))
