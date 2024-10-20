@@ -2,36 +2,36 @@ interface CopyBook {
   type: 'line' | 'square',
   format: 'A4',
   color: string,
-  pageSize: 12 | 24 | 32 | 48 | 96,
+  countPages: 12 | 24 | 32 | 48 | 96,
 }
 
 const copyBook1: CopyBook = {
   type: 'line',
   format: 'A4',
   color: 'white',
-  pageSize: 12,
+  countPages: 12,
 }
 
 const copyBook2: CopyBook = {
   type: 'line',
   format: 'A4',
   color: 'white',
-  pageSize: 12,
+  countPages: 12,
 }
 
 const copyBook3: CopyBook = {
   type: 'line',
   format: 'A4',
   color: 'white',
-  pageSize: 32,
+  countPages: 32,
 }
 
 function getPageSize(copyBook: CopyBook) {
-  return copyBook.pageSize;
+  return copyBook.countPages;
 }
 
 function isBug(copyBook: CopyBook) {
-  return copyBook.pageSize > 12;
+  return copyBook.countPages > 12;
 }
 
 console.log('copyBook:', copyBook1)
