@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "node ./src/index.js"
+    "run": "node src/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
