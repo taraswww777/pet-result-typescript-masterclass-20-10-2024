@@ -1,32 +1,36 @@
-const copyBook1 = {
-  // type: 'line', 'square',
+interface CopyBook {
+  type: 'line' | 'square',
+  format: 'A4',
+  color: string,
+  pageSize: 12 | 24 | 32 | 48 | 96,
+}
+
+const copyBook1: CopyBook = {
   type: 'line',
-  format: 'a4',
+  format: 'A4',
   color: 'white',
   pageSize: 12,
 }
 
-const copyBook2 = {
-  // type: 'line', 'square',
+const copyBook2: CopyBook = {
   type: 'line',
-  format: 'a4',
+  format: 'A4',
   color: 'white',
-  pageSize: 'двенадцать',
+  pageSize: 12,
 }
 
-const copyBook3 = {
-  // type: 'line', 'square',
+const copyBook3: CopyBook = {
   type: 'line',
-  format: 'a4',
+  format: 'A4',
   color: 'white',
-  pageSize: 'тридцать два',
+  pageSize: 32,
 }
 
-function getPageSize(copyBook) {
+function getPageSize(copyBook: CopyBook) {
   return copyBook.pageSize;
 }
 
-function isBug(copyBook) {
+function isBug(copyBook: CopyBook) {
   return copyBook.pageSize > 12;
 }
 
